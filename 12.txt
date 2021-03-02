@@ -1,0 +1,20 @@
+#include <fstream>
+#include <iostream>
+using namespace std;
+int main()
+{
+	fstream r;
+	r.open("88.txt", ios::in);
+	r.close();
+	r << "abc";
+	char t[256];
+	r >> t;
+	t[0] = r.get();
+	r.getline(t, 256, '\n');
+	while (r.eof())
+	{
+		r.getline(t, 256, '\n');
+		cout << t << endl;
+	}
+	return 0;
+}

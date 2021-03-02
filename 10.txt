@@ -1,0 +1,17 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+int main()
+{
+	int tor[12][12];
+	srand(time(0));
+	for (int i = 0; i < 12; i++)
+	{
+		for (int j = 0; j < 12; j++)
+		{
+			tor[i][j] = 0;
+			cout << tor[i][j];
+		}
+	}
+ return 0;
+}

@@ -1,0 +1,25 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+int main()
+{
+	srand(time(0));
+	int r[10];
+	for (int i = 0; i < 10; i++)
+	{
+		r[i] = rand() % 10 + 1;
+		for (int e = 0; e < i; e++)
+		{
+			if (r[e] == r[i])
+			{
+				i--;
+				break;
+			}
+		}
+	}
+	for (int x = 0; x < 10; x++)
+	{
+		cout << r[x] << " ";
+	}
+	return 0;
+}

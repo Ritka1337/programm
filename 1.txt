@@ -1,0 +1,42 @@
+#include <string>
+#include <iostream>
+using namespace std;
+int main()
+{
+	string str;
+	getline(cin, str);
+	wchar_t arr[10][10];
+	int i, j, dir = 1, T = 2, k1, k2;
+	arr[5][5] = str[0];
+	i = 4, j = 5, k1 = k2 = 1;
+	for (int a = 1; a < str.length(); a++)
+	{
+		arr[i][j] = str[a];
+			k1--;
+		if (!k1)
+		{
+			switch (dir)
+			{
+			case 1:dir = 2; break;
+			case 2:dir = 3; break;
+			case 3: dir = 4; break;
+			case 4: dir = 1; break;
+			}
+			T--;
+			if (!T)
+			{
+				T = 2;
+				k2++;
+			}
+			k1 = k2;
+		}
+		switch (dir)
+		{
+		case 1: i--; break;
+		case 2: j++; break;
+		case 3: i++; break;
+		case 4: j--; break;
+		}
+	}
+	return 0;
+}

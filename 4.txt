@@ -1,0 +1,30 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+int main()
+{
+	srand(time(0));
+	int r[4][4];
+	for (int mur = 0; mur < 4; mur++)
+	{
+		for (int fir = 0; fir < 4; fir++)
+		{
+			r[mur][fir] = rand() % 21;
+			cout << r[mur][fir] << "\t";
+		}
+		cout << "\n";
+	}
+	int i, j;
+	i = j = 0;
+	for (int k = 0; k < 4; k++)
+	{
+		for (int l = 0; l < 4; l++)
+		{
+			cout << r[i][j] << " ";
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	return 0;
+}

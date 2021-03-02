@@ -1,0 +1,92 @@
+
+#include <iostream>
+using namespace std;
+struct Name
+{
+	int data;
+	Name * next;
+	Name ()
+	{
+		data = 0;
+		next = NULL;
+	}
+};
+
+Name* head;
+Name* last;
+
+void Add()
+{
+	if (head == NULL)
+	{
+		head = new Name;
+		cin >> head->data;
+		last = head;
+		return;
+	}
+	Name*B = new Name;
+	cin >> B->data;
+	last->next = B;
+	last = B;
+}
+void Print()
+{ 
+	Name* B = new Name;
+    B = head;
+	for (; B != NULL;)
+	{
+		cout << B->data << " ";
+		B = B->next;
+	}
+}
+void Delete()
+{
+	Name* B = new Name;
+	Name* C = NULL;
+	Name* D = NULL;
+	B = head;
+	D = head;
+
+	int x;
+	cin >> x;
+	if (head->data == x)
+	{
+		C = head;
+		head = head->next;
+		delete C;
+	}
+	else
+	{
+		for (; B != NULL;)
+		{
+			if (B->data == x)
+			{
+				C = B;
+				B = B->next;
+				D->next = B;
+				delete C;
+			}
+			else
+			{
+				D = B;
+				B = B->next;
+			}
+		}
+	}
+}
+int main()
+{
+	int i;
+	while (1)
+	{
+		cout << "\n 1-add \n 2-print \n 3-delete \n 4-exit\n";
+		cin >> i;
+		switch (i)
+		{
+		case 1: Add(); break;
+		case 2: Print(); break;
+		case 3: Delete(); break;
+		}
+	}
+	return 0;
+}

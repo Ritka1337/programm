@@ -1,0 +1,18 @@
+using System;
+using System.Collections;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var arraylist = new ArrayList();
+            string str = Console.ReadLine();
+            arraylist.Add(str);
+            foreach (var value in arraylist)
+                Console.Write(value);
+
+        }
+    }
+}

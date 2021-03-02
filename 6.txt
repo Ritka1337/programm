@@ -1,0 +1,52 @@
+#include <iostream>
+#include <fstream>
+int* Key(int&b)
+{
+	int z, b = 0;
+	cin >> z;
+	for (int i = z; i > 0; z /= 10)
+		b++;
+	int* Mas = new int[b];
+	for (int i = b - 1; i >= 0; i--)
+	{
+		Mas[i] = (z % 10);
+		z /= 10;
+	}
+	return Mas;
+}
+using namespace std;
+int* kitty()
+{
+	void shifr(int* A, int B)
+		fstream C, D;
+	C.open("1.txt", ios::in);
+	D.open("2.txt", ios::out);
+	char e; int f=0
+		while (!C.eof())
+		{
+			e = C.get();
+			e = char(int(e) + a[f]);
+			cout << e;
+			d << e;
+		}
+	}
+}
+int main()
+{
+	for (;;)
+	{
+		int* k;
+		int x;
+		cout << "\t ***menu*** \n 1-key \n 2-zashifrovat \n 3-rashsifrovat \n 4-exit \n";
+		cin >> x;
+		switch (x)
+		{
+		case 1: k = Key(); break;
+		case 2: kitty(0); break;
+		case 3: kitty(1); break;
+		case 4: return 0;
+		default: cout << "O_o \n";
+		}
+	}
+	return 0;
+}

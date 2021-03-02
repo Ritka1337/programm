@@ -1,0 +1,62 @@
+#include<iostream>
+
+using namespace std;
+class Clas
+{
+public:
+	int did(int& x, int& y)
+	{
+		int result = x + y;
+		return result;
+	}
+	int dad(int& x, int& y)
+	{
+		int result = x - y;
+		return result;
+	}
+	int sad(int& x, int& y)
+	{
+		int result = x / y;
+		return result;
+	}
+	int dod(int& x, int& y)
+	{
+		int result = x * y;
+		return result;
+	}
+};
+
+
+int main()
+{
+	while (1)
+	{
+		int a;
+		int b;
+		cin >> a >> b;
+		char ar;
+		cin >> ar;
+		Clas f;
+		if (ar == '+')
+		{
+
+			f.did(a, b);
+			cout << "a + d = " << a + b << '\n';
+		}
+		else if (ar == '-')
+		{
+			f.dad(a, b);
+			cout << "a - d = " << a - b << '\n';
+		}
+		else if (ar == '/')
+		{
+			f.sad(a, b);
+			cout << "a / d = " << a / b << '\n';
+		}
+		else if (ar == '*')
+		{
+			f.dod(a, b);
+			cout << "a * d = " << a * b << '\n';
+		}
+	}
+}

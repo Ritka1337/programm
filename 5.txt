@@ -1,0 +1,29 @@
+#include <fstream>
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string S; int A(0);
+	cin >> S; wchar_t ksor;
+	fstream X;
+	X.open("1.txt", ios::in);
+	int drug = 0;
+	//int drug(0) тоже самое
+	while (!X.eof())
+	{
+		ksor = X.get();
+		if (ksor == S[A])
+		{
+			if (A++ == S.length())
+			{
+				drug++; A = 0;
+			}
+			else A++;
+		}
+		else A = 0;
+		cout << drug;
+		X.close();
+		return(0);
+	}
+}

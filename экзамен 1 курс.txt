@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int x, y, z, v, o = 0, g = 0, l = 0, h = 0;
+	int n = 1;
+	cin >> x >> y;
+	z = x;
+	v = y;
+	while ((x /= 10) > 1)
+	{
+		n++;
+		g = n;
+	}
+	for (int i = 0; i < g; i++)
+	{
+		l = l + pow(2, n);
+		z = z - pow(10, n);
+
+		n--;
+		if (z < 2)
+		{
+			l = l + 1;
+			break;
+		}
+	}
+	n = 1;
+	while ((y /= 10) > 1)
+	{
+		n++;
+		g = n;
+	}
+	for (int i = 0; i < g; i++)
+	{
+		h = h + pow(2, n);
+		v = v - pow(10, n);
+		n--;
+		if (v < 2)
+		{
+			h = h + 1;
+			break;
+		}
+	}
+	o = h + l;
+
+	cout << l << "+" << h << "=" << o;
+
+
+	return 0;
+}
